@@ -15,6 +15,11 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
+  for (i = 0; i < items.length; i++) {
+    items.forEach((element) => {
+      console.log(items[i].name);
+    })
+  }
 }
 
 /**
