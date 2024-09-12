@@ -43,6 +43,11 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  for (let i = 0; i < items.length; i++) {
+    items.find((element, id) => {
+      return element.name;
+    })
+  }
 }
 
 /**
