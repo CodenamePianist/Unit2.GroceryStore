@@ -103,6 +103,11 @@ function countItems(items) {
  */
 function calculateTotalPrice(items) {
   // TODO: use `reduce`
+  const initialValue = 0;
+  const totalInventoryPrice = items.reduce((accumulator, element) => 
+    accumulator + (element.price * element.quantity), initialValue
+  )
+  return totalInventoryPrice;
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
