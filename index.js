@@ -40,6 +40,18 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  /*
+  Possible solutions:
+  element.id === itemId NOPE
+  element.id === id NOPE
+  */
+  let food = ""
+  items.find((element) => {
+    if (element.id === id) {
+      food = element.name;
+    }
+  })
+  return food;
 }
 
 /**
