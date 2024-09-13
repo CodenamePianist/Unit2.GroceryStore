@@ -90,6 +90,11 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  const initialValue = 0;
+  const quantityWithInitial = items.reduce((accumulator, element) => 
+    accumulator + element.quantity, initialValue
+  )
+  return quantityWithInitial;
 }
 
 /**
