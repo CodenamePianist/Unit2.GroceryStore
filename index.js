@@ -75,6 +75,13 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  const foods = [];
+  items.filter((element) => {
+    if (element.category === category) {
+      foods.push(element.name);
+    }
+  })
+  return foods;
 }
 
 /**
