@@ -15,11 +15,9 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
-  for (let i = 0; i < items.length; i++) {
-    items.forEach((element) => {
-      console.log(element.name);
-    })
-  }
+  items.forEach((element) => {
+    console.log(element.name);
+  });
 }
 
 /**
@@ -27,13 +25,12 @@ function logNames(items) {
  * @returns {string[]} an array of item names in all uppercase
  */
 function getUppercaseNames(items) {
+  // TODO: use `map`
   const namesUppercase = []
-  for (let i = 0; i < items.length; i++) {
-    items.map((element) => {
-      namesUppercase.push(element.name.toUpperCase());
-    });
-    return namesUppercase;
-  };
+  items.map((element) => {
+    namesUppercase.push(element.name.toUpperCase());
+  });
+  return namesUppercase;
 };
 
 /**
@@ -43,11 +40,6 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
-  for (let i = 0; i < items.length; i++) {
-    items.find((element, id) => {
-      return element.name;
-    })
-  }
 }
 
 /**
