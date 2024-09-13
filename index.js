@@ -15,6 +15,9 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
+  items.forEach((element) => {
+    console.log(element.name);
+  });
 }
 
 /**
@@ -23,7 +26,12 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
-}
+  const namesUppercase = []
+  items.map((element) => {
+    namesUppercase.push(element.name.toUpperCase());
+  });
+  return namesUppercase;
+};
 
 /**
  * @param {Item[]} items - array of items
@@ -32,6 +40,18 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  /*
+  Possible solutions:
+  element.id === itemId NOPE
+  element.id === id NOPE
+  */
+  let food = ""
+  items.find((element) => {
+    if (element.id === id) {
+      food = element.name;
+    }
+  })
+  return food;
 }
 
 /**
@@ -41,6 +61,11 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].name === name) {
+      return items[i].price;
+    }
+  }
 }
 
 /**
@@ -50,6 +75,13 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  const foods = [];
+  items.filter((element) => {
+    if (element.category === category) {
+      foods.push(element.name);
+    }
+  })
+  return foods;
 }
 
 /**
@@ -58,6 +90,11 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  const initialValue = 0;
+  const quantityWithInitial = items.reduce((accumulator, element) => 
+    accumulator + element.quantity, initialValue
+  )
+  return quantityWithInitial;
 }
 
 /**
@@ -66,6 +103,11 @@ function countItems(items) {
  */
 function calculateTotalPrice(items) {
   // TODO: use `reduce`
+  const initialValue = 0;
+  const totalInventoryPrice = items.reduce((accumulator, element) => 
+    accumulator + (element.price * element.quantity), initialValue
+  )
+  return totalInventoryPrice;
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
